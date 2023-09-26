@@ -8,3 +8,40 @@
 
 ![image](https://github.com/Chaser2143/SnatchSolutions/assets/105551586/b6839700-19ad-416f-8e39-82f9c85086cc)
 
+### Key features
+- Https Login Page
+- Dynamically Loaded Budgets from DB
+- Ability to create a new budget and load it with data
+- Ability to easily add an expense from the budgets page for _on the go__ expenses
+- Budget amounts load from expenses, so each budget is always up to date
+
+### Technologies
+
+I am going to use the required technologies in the following ways.
+
+- **HTML** - Structure for each page of the web app (login, budget overview, budget, quick expense)
+- **CSS** - Styling for each page of the web app ^
+- **JavaScript** - Communicates with the DB to log users in, fetch corresponding budget data, create budgets and edit them on the go
+- **Service** - Backend service endpoints for
+- Login Page
+- Loading all budgets chronilogically
+- Registering a new budget
+- Editing an existing budget (on the go expense)
+- **DB** - Holds all the budget and expense data under each individual user
+- **Login** - Users will be registered if they don't have an account. If they do, associated data will be loaded
+- **WebSocket** - Methods for posting and requesting to and from budgets
+- **React** - Dynamically loads budgets, serves for the template page for budgets and expenses
+
+## HTML deliverable (Example Section - Needs Editing)
+
+For this deliverable I built out the structure of my application using HTML.
+
+- **HTML pages** - 
+- **Links** - 
+- **Text** - 
+- **Images** - 
+- **Login** - 
+- **Database** - 
+- **WebSocket** - 
+
+![image](https://github.com/Chaser2143/SnatchSolutions/assets/105551586/d409512d-5e20-4a57-923e-a88f9f6cd3d5)
