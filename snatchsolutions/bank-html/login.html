@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snatch Bank</title>
+    <link rel="icon" href="snake.ico" />
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Snatch Bank</h1>
+      <img src="../snatch.png" alt="Our Mascot Snatch!" width="200">
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">About</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="console.html">Budget Console</a></li>
+          <li><a href="budgetTemplate.html">Create a Budget</a></li>
+          <li><a href="quickExpense.html">Quick Expense</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <h1>Welcome</h1>
+      <form method="get" action="console.html">
+        <label for="Username">Username</label>
+        <input type="text" id="Username" placeholder="" />
+        <br>
+        <label for="Password">Password</label>
+        <input type="text" id="Password" placeholder="" />
+        <br>
+        <input type="checkbox" id="visibility">
+        <label for="visibility">Display Password</label>
+        <br>
+        <button type="submit">Login</button>
+      </form>
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Author Name(s) : Chase Bledsoe</span>
+      <br />
+      <a href="https://github.com/Chaser2143/SnatchSolutions">GitHub</a>
+    </footer>
+  </body>
+</html>
