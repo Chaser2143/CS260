@@ -2,19 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snatch Bank</title>
     <link rel="icon" href="snake.ico" />
   </head>
   <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
       <h1>Snatch Bank</h1>
       <img src="../snatch.png" alt="Our mascot Snatch" width="100">
       <!-- Navigation elements -->
       <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
           <li><a href="index.html">About</a></li>
           <li><a href="login.html">Login</a></li>
@@ -23,41 +20,42 @@
           <li><a href="quickExpense.html">Quick Expense</a></li>
         </menu>
       </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
 
     <main>
-      <h1>Quick Expense</h1>
-      <form method="get" action="console.html">
-        <label for="amount">Amount</label>
-        <input type="number" id="amount">
-        <br>
-        <input type="checkbox" id="income">
-        <label for="income">Mark if Income</label>
-        <br>
-        <h4>Categories</h4>
-        <input type="radio" id="groceries">
-        <label for="groceries">Groceries</label>
-        <br>
-        <input type="radio" id="travel">
-        <label for="travel">Travel</label>
-        <br>
-        <input type="radio" id="Eating Out">
-        <label for="Eating Out">Eating Out</label>
-        <br>
-        <input type="radio" id="Savings">
-        <label for="Savings">Savings</label>
-        <br>
-        <label for="date">Date of Expense</label>
-        <input type="date" id="date">
-        <br>
-        <label for="notes">Notes</label>
-        <input type="text" id="notes">
-        <br>
-        <button type="submit">Submit Expense</button>
-      </form>
+      <!-- This div is for the quick expense form -->
+      <div>
+        <h1>Quick Expense</h1>
+        <form method="get" action="console.html">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount">
+          <br>
+          <input type="checkbox" id="income">
+          <label for="income">Mark if Income</label>
+          <br>
+          <h4>Categories</h4>
+          <input type="radio" id="groceries">
+          <label for="groceries">Groceries</label>
+          <br>
+          <input type="radio" id="travel">
+          <label for="travel">Travel</label>
+          <br>
+          <input type="radio" id="Eating Out">
+          <label for="Eating Out">Eating Out</label>
+          <br>
+          <input type="radio" id="Savings">
+          <label for="Savings">Savings</label>
+          <br>
+          <label for="date">Date of Expense</label>
+          <input type="date" id="date">
+          <br>
+          <label for="notes">Notes</label>
+          <input type="text" id="notes">
+          <br>
+          <button type="submit">Submit Expense</button>
+        </form>
+      </div>
     </main>
 
     <footer>
