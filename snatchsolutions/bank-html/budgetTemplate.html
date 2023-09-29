@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<!-- NOT TOUCHED YET -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snatch Bank</title>
     <link rel="icon" href="snake.ico" />
   </head>
   <body>
-    <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
       <h1>Snatch Bank</h1>
 
       <!-- Navigation elements -->
       <nav>
-        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
         <menu>
           <li><a href="index.html">About</a></li>
           <li><a href="login.html">Login</a></li>
@@ -25,24 +21,48 @@
         </menu>
       </nav>
 
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
 
     <main>
-      <h1>Welcome</h1>
-      <form method="get" action="console.html">
-        <label for="Username">Username</label>
-        <input type="text" id="Username" placeholder="" />
-        <br>
-        <label for="Password">Password</label>
-        <input type="text" id="Password" placeholder="" />
-        <br>
-        <input type="checkbox" id="visibility">
-        <label for="visibility">Display Password</label>
-        <br>
-        <button type="submit">Login</button>
-      </form>
+      <!-- This div contains all the "metadata" or overall info about the selected budget -->
+      <div>
+        <!-- The budget name should be autoplaced in the header below -->
+        <h1>Budget *</h1>
+        <!-- Each of these P tags will be filled with data from the database -->
+        <p>Amount In : ______</p>
+        <p>Start Date : _____</p>
+        <p>End Date : ______</p>
+        <!-- Each category will have its own div to make it easier to find/auto load into the html -->
+        <!-- Its possible these could also be text inputs so they can be modified and sent back to the DB? Im not that far yet... -->
+        <div>
+          <p>Category 1 Name : </p>
+          <p>___Amount Allocated___ : __Amount Left_____ </p>
+        </div>
+        <div>
+          <p>Category 2 Name : </p>
+          <p>___Amount Allocated___ : __Amount Left_____ </p>
+        </div>
+        <form method="get" action="budgetTemplate.html">
+          <button type="submit">Create a Budget</button>
+        </form>
+        <div>
+          <p>Total Amount Left: ______</p>
+        </div>
+      </div>
+
+      <!-- This Div Contains all the expense Info corresponding to the budget-->
+      <div>
+        <h3>Expenses</h3>
+        <!-- Div for expense info -->
+        <div>
+            <p>Name Category  $$$ Date  Notes</p>
+            <!-- Not totally sure how I'll implement this yet -->
+            <form method="get" action="quickExpense.html">
+              <button type="submit">Add Expense</button>
+            </form>
+        </div>
+      </div>
     </main>
 
     <footer>
