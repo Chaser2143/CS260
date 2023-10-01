@@ -40,8 +40,9 @@ For this deliverable I built out the structure of my application using HTML.
 - **Links** - Within each page linking to the other html pages as necessary
 - **Text** - Within each page, but most especially within the about page
 - **Images** - Within mostly each page, but mostly the about page
+- The landing page also holds a picture of a dog which is my placeholder for a 3rd party service, which provides a random picture of a dog everytime its called.
 - **Login** - Within the login page
-- **Database** - Will be accessed via console.html and budget template
-- **WebSocket** - Will be accessed within Quick Expense
+- **Database** - Will be accessed via console.html and budget template (Placeholder marked on console page)
+- **WebSocket** - Will be accessed within Quick Expense (Placeholder marked on quickExpense page)
 
 ![image](https://github.com/Chaser2143/SnatchSolutions/assets/105551586/d409512d-5e20-4a57-923e-a88f9f6cd3d5)
