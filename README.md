@@ -36,12 +36,12 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I built out the structure of my application using HTML.
 
-- **HTML pages** - 
-- **Links** - 
-- **Text** - 
-- **Images** - 
-- **Login** - 
-- **Database** - 
-- **WebSocket** - 
+- **HTML pages** - 5 Different Pages; Index(About), Login, Console, Quick Expense, and Budget Template
+- **Links** - Within each page linking to the other html pages as necessary
+- **Text** - Within each page, but most especially within the about page
+- **Images** - Within mostly each page, but mostly the about page
+- **Login** - Within the login page
+- **Database** - Will be accessed via console.html and budget template
+- **WebSocket** - Will be accessed within Quick Expense
 
 ![image](https://github.com/Chaser2143/SnatchSolutions/assets/105551586/d409512d-5e20-4a57-923e-a88f9f6cd3d5)
