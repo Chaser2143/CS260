@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <title>Snatch Bank</title>
+    <link rel="icon" href="snake.ico" />
+  </head>
+  <body>
+    <header>
+      <h1>Snatch Bank</h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <menu>
+          <li><a href="index.html">About</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="console.html">Budget Console</a></li>
+          <li><a href="budgetTemplate.html">Create a Budget</a></li>
+          <li><a href="quickExpense.html">Quick Expense</a></li>
+        </menu>
+      </nav>
+
+      <hr />
+    </header>
+
+    <main>
+      <!-- This div contains all the "metadata" or overall info about the selected budget -->
+      <div>
+        <!-- The budget name should be autoplaced in the header below -->
+        <h1>Budget *</h1>
+        <!-- Each of these P tags will be filled with data from the database -->
+        <p>Amount In : ______</p>
+        <p>Start Date : _____</p>
+        <p>End Date : ______</p>
+        <!-- Each category will have its own div to make it easier to find/auto load into the html -->
+        <!-- Its possible these could also be text inputs so they can be modified and sent back to the DB? Im not that far yet... -->
+        <div>
+          <p>Category 1 Name : </p>
+          <p>___Amount Allocated___ : __Amount Left_____ </p>
+        </div>
+        <div>
+          <p>Category 2 Name : </p>
+          <p>___Amount Allocated___ : __Amount Left_____ </p>
+        </div>
+        <form method="get" action="budgetTemplate.html">
+          <button type="submit">Create a Budget</button>
+        </form>
+        <div>
+          <p>Total Amount Left: ______</p>
+        </div>
+      </div>
+
+      <!-- This Div Contains all the expense Info corresponding to the budget-->
+      <div>
+        <h3>Expenses</h3>
+        <!-- Div for expense info -->
+        <div>
+            <p>Name Category  $$$ Date  Notes</p>
+            <!-- Not totally sure how I'll implement this yet -->
+            <form method="get" action="quickExpense.html">
+              <button type="submit">Add Expense</button>
+            </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Author Name(s)</span>
+      <br />
+      <a href="https://github.com/Chaser2143/SnatchSolutions">GitHub</a>
+    </footer>
+  </body>
+</html>

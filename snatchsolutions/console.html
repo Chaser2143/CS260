@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snatch Bank</title>
+    <link rel="icon" href="snake.ico" />
+  </head>
+  <body>
+    <header>
+      <h1>Snatch Bank</h1>
+      <img src="../snatch.png" alt="Our Mascot Snatch!" width="200">
+
+      <!-- Navigation elements -->
+      <nav>
+        <menu>
+          <li><a href="index.html">About</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="console.html">Budget Console</a></li>
+          <li><a href="budgetTemplate.html">Create a Budget</a></li>
+          <li><a href="quickExpense.html">Quick Expense</a></li>
+        </menu>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <!-- This div is for the "Create a budget" form -->
+      <div> 
+        <form method="get" action="budgetTemplate.html">
+          <button type="submit">Create a Budget</button>
+        </form>
+      </div>
+
+      <!-- This div is for current budgets -->
+      <div>
+        <h2>Current Budget</h2>
+        <div>
+          <!-- This action should go to the actual listed budget -->
+          <a href="budgetTemplate.html">Budget 1</a>
+          <a href="quickExpense.html">+ -</a>
+        </div>
+      </div>
+
+      <!-- This div is for past budgets -->
+      <div>
+        <h2>Past Budgets</h2>
+        <div>
+          <!-- This action should go to the actual listed budget -->
+          <a href="budgetTemplate.html">Budget 2</a>
+          <a href="quickExpense.html">+ -</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Author Name(s) : Chase Bledsoe</span>
+      <br />
+      <a href="https://github.com/Chaser2143/SnatchSolutions">GitHub</a>
+    </footer>
+  </body>
+</html>
