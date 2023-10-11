@@ -28,29 +28,34 @@
       </nav>
     </header>
 
-    <main class="content">
+    <main class="content align-form">
       <!-- This div is for the login form -->
       <div>
-        <h1>Welcome</h1>
-        <form method="get" action="console.html">
-          <label for="Username">Username</label>
-          <input type="text" id="Username" placeholder="" />
+        <div class="blockquote text-center">
+          <h1 class="display-2 m-3">Welcome</h1>
+          <!-- API will go here : https://www.greetingsapi.com/ -->
+        </div>
+        <div>
+        <form class="mar-form p-2">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
           <br>
-          <label for="Password">Password</label>
-          <input type="text" id="Password" placeholder="" />
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+          </div>
           <br>
-          <input type="checkbox" id="visibility">
-          <label for="visibility">Display Password</label>
-          <br>
-          <button type="submit">Login</button>
+          <button type="submit" class="btn btn-primary">Sign In</button>
         </form>
       </div>
+      </div>
     </main>
-
-          <!-- <div>
-        <img src ="./dog_placeholder.jfif">
-        <!-- #3rd Party Service Call to get a random picture of a dog, cause I love dogs -->
-        <!-- https://dog.ceo/dog-api/ -->
 
     <footer class="d-flex bg-dark p-3 justify-content-between">
       <span class="footer-content">Author: Chase Bledsoe</span>
