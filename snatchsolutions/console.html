@@ -28,33 +28,104 @@
       </nav>
     </header>
 
-    <main class="content">
+    <main class="content mar-content">
       <!-- This div is for the "Create a budget" form -->
-      <div> 
-        <form method="get" action="budgetTemplate.html">
-          <button type="submit">Create a Budget</button>
-        </form>
-      </div>
-
-      <!-- This div is for current budgets -->
-      <!-- All of this will interact with the database -->
       <div>
-        <h2>Current Budget</h2>
-        <div>
-          <!-- This action should go to the actual listed budget -->
-          <a href="budgetTemplate.html">Budget 1</a>
-          <a href="quickExpense.html">+ -</a>
+        <h1>Current Budgets</h1>
+        <div class="table-responsive">
+        <table class="table table-hover table-bordered table-responsive-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Date Active</th>
+              <th scope="col">Amount In</th>
+              <th scope="col">Amount Left</th>
+              <th scope="col">Add Expense</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">4</th>
+              <td>Checking</td>
+              <td>10/9/2023</td>
+              <td></td>
+              <td></td>
+              <td>
+                <form method="get" action="quickExpense.html">
+                  <button class="btn btn-light" type="submit">Add Expense</button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div> 
+          <form method="get" action="budgetTemplate.html">
+            <button class="btn btn-success" type="submit">Create a Budget</button>
+          </form>
         </div>
       </div>
+
+      <br>
 
       <!-- This div is for past budgets -->
       <div>
-        <h2>Past Budgets</h2>
         <div>
-          <!-- This action should go to the actual listed budget -->
-          <a href="budgetTemplate.html">Budget 2</a>
-          <a href="quickExpense.html">+ -</a>
-        </div>
+          <h1>Past Budgets</h1>
+          <div class="table-responsive">
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date Active</th>
+                <th scope="col">Amount In</th>
+                <th scope="col">Amount Left</th>
+                <th scope="col">Add Expense</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">3</th>
+                <td></td>
+                <td>10/2/2023</td>
+                <td></td>
+                <td></td>
+                <td>
+                  <form method="get" action="quickExpense.html">
+                    <button class="btn btn-light" type="submit">Add Expense</button>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td></td>
+                <td>9/25/2023</td>
+                <td></td>
+                <td></td>
+                <td>
+                  <form method="get" action="quickExpense.html">
+                    <button class="btn btn-light" type="submit">Add Expense</button>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td>9/18/2023</td>
+                <td></td>
+                <td></td>
+                <td>
+                  <form method="get" action="quickExpense.html">
+                    <button class="btn btn-light" type="submit">Add Expense</button>
+                  </form>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <div> 
       </div>
     </main>
 
