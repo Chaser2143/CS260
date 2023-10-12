@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snatch Bank</title>
     <link rel="icon" href="snake.ico" />
   </head>
@@ -28,44 +28,132 @@
       </nav>
     </header>
 
-    <main class="content">
-      <!-- This div contains all the "metadata" or overall info about the selected budget -->
+    <main class="content mar-content">
+      <!-- This div is for the "Create a budget" form -->
       <div>
-        <!-- The budget name should be autoplaced in the header below -->
-        <h1>Budget *</h1>
-        <!-- Each of these P tags will be filled with data from the database -->
-        <p>Amount In : ______</p>
-        <p>Start Date : _____</p>
-        <p>End Date : ______</p>
-        <!-- Each category will have its own div to make it easier to find/auto load into the html -->
-        <!-- Its possible these could also be text inputs so they can be modified and sent back to the DB? Im not that far yet... -->
-        <div>
-          <p>Category 1 Name : </p>
-          <p>___Amount Allocated___ : __Amount Left_____ </p>
+        <div class="text-center">
+          <h1>Budget #</h1>
         </div>
-        <div>
-          <p>Category 2 Name : </p>
-          <p>___Amount Allocated___ : __Amount Left_____ </p>
+        <h5>Meta Data</h5>
+        <div class="table-responsive">
+        <table class="table table-hover table-bordered table-responsive-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Date Active</th>
+              <th scope="col">Date Ended</th>
+              <th scope="col">Amount In</th>
+              <th scope="col">Amount Left</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">4</th>
+              <td>Checking</td>
+              <td>10/9/2023</td>
+              <td></td>
+              <td></td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         </div>
-        <form method="get" action="budgetTemplate.html">
-          <button type="submit">Create a Budget</button>
-        </form>
-        <div>
-          <p>Total Amount Left: ______</p>
-        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered table-responsive-sm">
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Amount Allocated</th>
+                <th scope="col">Amount Left</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">C1</th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">C2</th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">C3</th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">Budget Totals</th>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
       </div>
 
-      <!-- This Div Contains all the expense Info corresponding to the budget-->
+      <br>
+
+      <style>
+        .flex-inline{
+          display: flex;
+          justify-content: space-between;
+        }
+      </style>
+
       <div>
-        <h3>Expenses</h3>
-        <!-- Div for expense info -->
         <div>
-            <p>Name Category  $$$ Date  Notes</p>
-            <!-- Not totally sure how I'll implement this yet -->
-            <form method="get" action="quickExpense.html">
-              <button type="submit">Add Expense</button>
-            </form>
-        </div>
+          <div class="flex-inline">
+          <h1>Expenses</h1>
+          <form method="get" action="quickExpense.html">
+            <button class="btn btn-light" type="submit">Add Expense</button>
+          </form>
+          </div>
+          <div class="table-responsive">
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Expense #</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <div> 
       </div>
     </main>
 
