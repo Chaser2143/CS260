@@ -69,3 +69,9 @@ body {
   margin: 0;
 }
 }
+
+/* Budget Template */
+.flex-inline{
+  display: flex;
+  justify-content: space-between;
+}

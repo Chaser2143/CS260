@@ -33,40 +33,56 @@
       </nav>
     </header>
 
-    <main class="content">
+    <main class="content pad-text">
       <!-- This div is for the quick expense form -->
       <!-- This will use a WebSocket to pass data to the DB -->
-      <div>
+      <div class="text-center">
         <h1>Quick Expense</h1>
-        <form method="get" action="console.html">
-          <label for="amount">Amount</label>
-          <input type="number" id="amount">
+        <form>
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-sm-5">
+              <input type="date" class="form-control" id="date" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="category" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-5">
+            <select class="form-control custom-select" id="category">
+              <option selected>Choose...</option>
+              <option value="1">C1</option>
+              <option value="2">C2</option>
+              <option value="3">C3</option>
+            </select>
+          </div>
+          </div>
+          <div class="form-group row">
+            <label for="amount" class="col-sm-2 col-form-label">Amount</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="amount" placeholder="$">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="notes" class="col-sm-2 col-form-label">Notes</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="notes" placeholder="Notes">
+            </div>
+          </div>
+          
           <br>
-          <input type="checkbox" id="income">
-          <label for="income">Mark if Income</label>
-          <br>
-          <h4>Categories</h4>
-          <input type="radio" id="groceries">
-          <label for="groceries">Groceries</label>
-          <br>
-          <input type="radio" id="travel">
-          <label for="travel">Travel</label>
-          <br>
-          <input type="radio" id="Eating Out">
-          <label for="Eating Out">Eating Out</label>
-          <br>
-          <input type="radio" id="Savings">
-          <label for="Savings">Savings</label>
-          <br>
-          <label for="date">Date of Expense</label>
-          <input type="date" id="date">
-          <br>
-          <label for="notes">Notes</label>
-          <input type="text" id="notes">
-          <br>
-          <button type="submit">Submit Expense</button>
+
+          <div class="form-group row">
+            <div class="col-sm-5">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
         </form>
-      </div>
     </main>
 
     <footer class="d-flex bg-dark p-3 justify-content-between">
