@@ -32,7 +32,7 @@ I am going to use the required technologies in the following ways.
 - **WebSocket** - Methods for posting and requesting to and from budgets
 - **React** - Dynamically loads budgets, serves for the template page for budgets and expenses
 
-## HTML deliverable (Example Section - Needs Editing)
+## HTML deliverable
 
 For this deliverable I built out the structure of my application using HTML.
 
@@ -46,3 +46,14 @@ For this deliverable I built out the structure of my application using HTML.
 - **WebSocket** - Will be accessed within Quick Expense (Placeholder marked on quickExpense page)
 
 ![image](https://github.com/Chaser2143/SnatchSolutions/assets/105551586/d409512d-5e20-4a57-923e-a88f9f6cd3d5)
+
+## CSS Deliverable
+
+For this deliverable, I styled the CSS of my startup, mostly using bootstrap.
+
+- **Header, footer, and main content body**
+- **Navigation elements** - I added a really nice drop down and styled all my buttons
+- **Responsive to window resizing** - My app looks great on all window sizes (works great on phones)
+- **Application elements** - UI is clear and simple
+- **Application text content** - Properly styled to my liking
+- **Application images** - Images have been added; Moving from my old dog pic api to a greetings API
