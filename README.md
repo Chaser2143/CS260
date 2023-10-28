@@ -63,6 +63,11 @@ For this deliverable, I styled the CSS of my startup, mostly using bootstrap.
 For this deliverable, I added the JS foundations for the future implementations on the site.
 
 - **Login Support** - I saved the username and password from the login page into the user's local storage, and moved them on to the budget console page. In the future, I can change these to be verified in the DB before moving them onward.
-- **Interaction Logic Support**
+- **Interaction Logic Support** - Expense objects are created and loaded into local storage. Login page also calls a web service which greets the user in a new language.
 - **Websocket Support**
-- **Future Database Support**
+- **Future Database Support** - Every place where I put something into local storage will eventually go into a database. Everything I put into local storage is organized into a class of some kind, which will interact well and keep everything organized as it needs to be.
+
+**Future Work**
+When these objects are loaded, I will have them do the calculations for amounts and such.
+
+Note: The magnitude of this project grew seemingly exponentially at this step, especially for all the bells and whistles (dynamic expense loading, drop downs being up to date with budgets, how much to load on each page, creating a new budget form, etc). Although many of these things do use JavaScript, they also required a pretty decent amount of html and css mending, whcih I did not anticipate. Since each deliverable is supposed to be about 100 lines of code, I hope you'll have mercy on me for this one, as I definitely wrote that amount. I have tried to implement the skeleton for everything in this deliverable, but because of the magnitude of growth here, as well as the need for a DB and react to implement many of these features effectively (dynamic page loading with budgets and expenses), I hope you'll accept it for what it is.
