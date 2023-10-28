@@ -57,3 +57,12 @@ For this deliverable, I styled the CSS of my startup, mostly using bootstrap.
 - **Application elements** - UI is clear and simple
 - **Application text content** - Properly styled to my liking
 - **Application images** - Images have been added; Moving from my old dog pic api to a greetings API
+
+## JavaScript Deliverable
+
+For this deliverable, I added the JS foundations for the future implementations on the site.
+
+- **Login Support** - I saved the username and password from the login page into the user's local storage, and moved them on to the budget console page. In the future, I can change these to be verified in the DB before moving them onward.
+- **Interaction Logic Support**
+- **Websocket Support**
+- **Future Database Support**
