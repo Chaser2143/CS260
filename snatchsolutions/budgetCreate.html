@@ -7,8 +7,9 @@
     <title>Snatch Bank</title>
     <link rel="icon" href="snake.ico" />
     <script src="budget.js"></script>
+    <script src="main.js"></script>
   </head>
-  <body>
+  <body onload="populateCreateBudget()">
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
@@ -32,7 +33,10 @@
     <main class="content mar-content">
       <!-- This div is for the "Create a budget" form -->
       <div>
-        <h1>Current Budgets</h1>
+        <div class="text-center">
+          <h1>Budget #</h1>
+        </div>
+        <h5>Meta Data</h5>
         <div class="table-responsive">
         <table class="table table-hover table-bordered table-responsive-sm">
           <thead>
@@ -40,92 +44,85 @@
               <th scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">Date Active</th>
+              <th scope="col">Date Ended</th>
               <th scope="col">Amount In</th>
               <th scope="col">Amount Left</th>
-              <th scope="col">Add Expense</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">4</th>
-              <td>Checking</td>
-              <td>10/9/2023</td>
-              <td></td>
-              <td></td>
-              <td>
-                <form method="get" action="quickExpense.html">
-                  <button class="btn btn-light" type="submit">Add Expense</button>
-                </form>
-              </td>
+              <th scope="row" id="BudgetNum"></th>
+              <td ondblclick="editText(this)"></td>
+              <td ondblclick="editText(this)"></td>
+              <td ondblclick="editText(this)"></td>
+              <td ondblclick="editText(this)"></td>
+              <td ondblclick="editText(this)"></td>
             </tr>
           </tbody>
         </table>
         </div>
-        <div> 
-        <button class="btn btn-success" type="button" onclick="createBudget()">Create a Budget</button>
-        </div>
-      </div>
 
-      <br>
-
-      <!-- This div is for past budgets -->
-      <div>
-        <div>
-          <h1>Past Budgets</h1>
-          <div class="table-responsive">
-          <table class="table table-hover table-bordered">
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered table-responsive-sm">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Date Active</th>
-                <th scope="col">Amount In</th>
+                <th scope="col">Category</th>
+                <th scope="col">Amount Allocated</th>
                 <th scope="col">Amount Left</th>
-                <th scope="col">Add Expense</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">3</th>
+                <th scope="row" ondblclick="editText(this)">--Double Click to Edit--</th>
+                <td ondblclick="editText(this)"></td>
                 <td></td>
-                <td>10/2/2023</td>
-                <td></td>
-                <td></td>
-                <td>
-                  <form method="get" action="quickExpense.html">
-                    <button class="btn btn-light" type="submit">Add Expense</button>
-                  </form>
-                </td>
               </tr>
               <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td>9/25/2023</td>
+                <th scope="row">Budget Totals</th>
                 <td></td>
                 <td></td>
-                <td>
-                  <form method="get" action="quickExpense.html">
-                    <button class="btn btn-light" type="submit">Add Expense</button>
-                  </form>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td>9/18/2023</td>
-                <td></td>
-                <td></td>
-                <td>
-                  <form method="get" action="quickExpense.html">
-                    <button class="btn btn-light" type="submit">Add Expense</button>
-                  </form>
-                </td>
               </tr>
             </tbody>
           </table>
           </div>
-          <div> 
+          <button class="btn btn-light" type="button" onclick="injectCategory()">Add Category</button>
       </div>
+
+      <br>
+
+      <div>
+        <div>
+          <div class="flex-inline">
+          <h1>Expenses</h1>
+          </div>
+          <form>
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Expense #</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td ondblclick="editText(this)"></td>
+                    <td ondblclick="editText(this)"></td>
+                    <td ondblclick="editText(this)"></td>
+                    <td ondblclick="editText(this)"></td>
+                    <td ondblclick="editText(this)"></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <button class="btn btn-light" type="button">Add Expense</button>
+            </form>
+          </div>
     </main>
 
     <footer class="d-flex bg-dark p-3 justify-content-between">

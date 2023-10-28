@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Text on Double Click</title>
+</head>
+<body>
+  <p id="editableText" ondblclick="editText(this)">Double-click to edit me</p>
+
+  <script>
+    function editText(element) {
+      const originalText = element.textContent;
+      const input = document.createElement("input");
+      input.value = originalText;
+      element.textContent = "";
+      element.appendChild(input);
+
+      input.addEventListener("blur", function () {
+        element.textContent = input.value;
+      });
+
+      input.focus();
+    }
+  </script>
+</body>
+</html>
+
+
+
+

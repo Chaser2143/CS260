@@ -28,3 +28,18 @@ async function fillHeader() {
         // Handle the error as needed, e.g., display a default message or take other actions
     }
 }
+
+//Used to edit text in all forms
+function editText(element) {
+    const originalText = element.textContent;
+    const input = document.createElement("input");
+    input.value = originalText;
+    element.textContent = "";
+    element.appendChild(input);
+
+    input.addEventListener("blur", function () {
+      element.textContent = input.value;
+    });
+
+    input.focus();
+  }
