@@ -62,10 +62,11 @@ For this deliverable, I styled the CSS of my startup, mostly using bootstrap.
 
 For this deliverable, I added the JS foundations for the future implementations on the site.
 
-- **Login Support** - I saved the username and password from the login page into the user's local storage, and moved them on to the budget console page. In the future, I can change these to be verified in the DB before moving them onward.
-- **Interaction Logic Support** - Expense objects are created and loaded into local storage. Login page also calls a web service which greets the user in a new language.
-- **Websocket Support** - Implemented proper class structure to facilitate updating in realtime. -- Because of the design of users, budgets, and expenses dynamically loading, every change will automatically be reflected when the user loads the page. So if multiple people (a couple) share an account, they will both always see updated information in realtime.
-- **Future Database Support** - Every place where I put something into local storage will eventually go into a database. Everything I put into local storage is organized into a class of some kind, which will interact well and keep everything organized as it needs to be.
+- **Login Support** - I saved the username and password from the login page into the user's local storage as a user object, and moved them on to the budget console page. In the future, I can change these to be verified in the DB before moving them onward.
+- **Interaction Logic Support** - Expense objects are created and loaded into local storage from the quick expense page. Login page also calls a web service which greets the user in a new language.
+- **Websocket Support** - Implemented proper class structure to facilitate updating in realtime. This is more behind the scenes, as I need to redo my budgetTemplate.html into a form so we can instantiate these things.
+- Because of the design of users, budgets, and expenses dynamically loading, every change will automatically be reflected when the user loads the page. So if multiple people (a couple) share an account, they will both always see updated information in realtime.
+- **Future Database Support** - Every place where I put something into local storage will eventually go into a database (User Info, Expenses, and Budgets/Categories in the future). Everything I put into local storage is organized into a class of some kind, which will interact well and keep everything organized as it needs to be.
 
 **Future Work**
 - When these objects (budgets) are loaded, I will have them do the calculations for amounts and such. This could also implement some kind of cacheing which will check if anything has been changed since it was last calculated.
