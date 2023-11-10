@@ -1,0 +1,31 @@
+Use simon code as starter code
+Persistent Storage -> 
+- Services convert website to node JS
+- MongoDB as database
+
+Keep local storage
+Use mock data, or get it to work from local storage (unpolished)
+
+Create function/class that will create a table from the object data and load onto page
+
+Axe features that are work vacuums
+- Take out quick expense and past budgets
+
+Resubmit JS when I'm done
+- Fix the things that made you lose points
+
+
+--------------------------------------------------------------------------------------------
+11/9/2023
+Questions
+
+- Requirements for Service
+- How many services?
+- How do I organize this?
+
+
+- Hold data in app.JS
+- Make it accessible with an http Request
+- Put the request for that in my js files
+- Examples of this are in Simon service (Await)
+- Websocket simple, notify others when logged in like Simon does

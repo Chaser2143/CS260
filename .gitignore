@@ -1,4 +1,10 @@
-simon-javascript/
+simon-service/
+startup-example/
 deployFiles.sh
 oldCaddy.txt
 TODO.txt
+snatchsolutions/npmt/node_modules
+.vscode
+node_modules
+package-lock.json
+package.json

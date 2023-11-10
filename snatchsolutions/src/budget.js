@@ -1,22 +1,19 @@
-//Categories should be paired with budgets, but also should be accessible as a set so users don't have to remake their categories with every new budget
-class Category{
-    constructor(Name, AmountSet){
-        this.Name = Name;
-        this.AmountSet = AmountSet;
-    }
-}
-
 //Holds Expenses
 //On load will dynamically update amounts from the expenses and their categories
 class Budget {
-    constructor(Number){
-      this.Number = Number;
-    }
-
-    //Function to add/remove a category
-
-    //Function to add/remove expenses
+  constructor(Number, Name, Date, Amount, Notes){
+    this.Number = Number;
+    this.Name = Name;
+    this.Date = Date;
+    this.Amount = Amount;
+    this.Notes = Notes;
+    this.Expenses = [];
   }
+
+  addExpense(Expense){
+    this.Expenses.push(Expense);
+  }
+}
 
 // Initialize the budgetCounter from localStorage or start at 1 if it doesn't exist
 let budgetCounter = parseInt(localStorage.getItem('budgetCounter')) || 1;
@@ -31,14 +28,20 @@ function getNewBudgetNum() {
 
 //Creates a new budget to be filled in by the form
 function createBudget(){
-  let budgetNum = getNewBudgetNum();
-  const newBudget = new Budget(budgetNum);
+  const Name = document.querySelector("#name");
+  const Date = document.querySelector("#date");
+  const Amount = document.querySelector("#amount");
+  const Notes = document.querySelector("#notes");
+  const budgetNum = getNewBudgetNum();
+  const newBudget = new Budget(budgetNum, Name.value, Date.value, Amount.value, Notes.value);
+
+  console.log(newBudget);
   
   //Store budget in local memory so I can edit it before saving it to the DB
-  localStorage.setItem("NewBudget", JSON.stringify(newBudget));
+  localStorage.setItem("Budget", JSON.stringify(newBudget));
 
   //Move to budgetCreate html
-  window.location.href = "budgetCreate.html";
+  window.location.href = "console.html";
 }
 
 //Get the budget Number and populate it into the form

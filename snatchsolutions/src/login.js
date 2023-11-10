@@ -1,13 +1,14 @@
 class User{
-    //In the future, a user will also hold budgets, which hold categories and expenses, thus connecting everything together
-    constructor(Email, Password){
-        this.Email = Email;
-        this.Password = Password;
-    }
+  //In the future, a user will also hold budgets, which hold categories and expenses, thus connecting everything together
+  constructor(Email, Password){
+      this.Email = Email;
+      this.Password = Password;
+  }
 }
 
 //Used to store the login page info in local storage
 function login() {
+    console.log("In Login function");
     //Get each of the login fields
     const email = document.querySelector("#InputEmail");
     const password = document.querySelector("#InputPassword");
