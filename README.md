@@ -83,7 +83,6 @@ For this deliverable, I added the JS foundations for the future implementations 
   -'/budgets/' lists all budgets (also shown in local storage)
   -'/budget/' adds a budget to all budgets (easiest through the create a budget button on the console)
   -'/expense/' adds an expense to the budget with the matching budget number (easiest through the add Expense button, make sure to add to the right number)
-
 **Frontend Calls to my Service Endpoints**
 -The console "create a budget" button takes the user to a form to make a budget. The budget is submitted to my '/api/budget/' endpoint to add it to all of my budgets.
 -The console "add expense" buttons takes the user to a form to make an expense. **Make sure to get the budget number right.** The expense is submitted to my '/api/expense' endpoint to add it to the corresponding budget. 

@@ -41,29 +41,18 @@
               <th scope="col">Name</th>
               <th scope="col">Date Active</th>
               <th scope="col">Amount In</th>
-              <th scope="col">Amount Left</th>
-              <th scope="col">Add Expense</th>
+              <th scope="col">Notes</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">4</th>
-              <td>Checking</td>
-              <td>10/9/2023</td>
-              <td></td>
-              <td></td>
-              <td>
-                <form method="get" action="quickExpense.html">
-                  <button class="btn btn-light" type="submit">Add Expense</button>
-                </form>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="budgets"></tbody>
         </table>
         </div>
         <div> 
           <form method="get" action="budgetCreate.html">
             <button class="btn btn-light" type="submit">Create Budget</button>
+          </form>
+          <form method="get" action="quickExpense.html">
+            <button class="btn btn-light" type="submit">Add Expense</button>
           </form>
         </div>
       </div>

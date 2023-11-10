@@ -54,41 +54,56 @@ async function createBudget(){
   window.location.href = "console.html";
 }
 
-//Get the budget Number and populate it into the form
-function populateCreateBudget(){
-  console.log("IN POP");
-  const numHTML = document.querySelector("#BudgetNum");
-  numHTML.innerHTML = localStorage.getItem('budgetCounter');
+async function loadBudgets(){
+  let budgets = [];
+  try {
+    // Get the latest budgets from the service
+    const response = await fetch('/api/budgets');
+    budgets = await response.json();
+
+    // Save the budgets in case we go offline in the future
+    localStorage.setItem('Budget', JSON.stringify(budgets));
+  } catch {
+    // If there was an error then just use the last saved budgets
+    const budgetsText = localStorage.getItem('Budget');
+    if (budgetsText) {
+      budgets = JSON.parse(budgetsText);
+    }
+  }
+
+  displayScores(budgets);
 }
 
-function injectCategory() {
-  const injectionContainer = document.getElementById('injectCategory');
-  // HTML content you want to inject
-  const htmlToInject = '<th scope="row" ondblclick="editText(this)">--Double Click to Edit--</th><td ondblclick="editText(this)"></td><td></td>';
+function displayScores(budgets) {
+  const tableBodyEl = document.querySelector('#budgets');
 
-  // Inject the HTML content into the container
-  injectionContainer.innerHTML = htmlToInject;
+  if (budgets.length) {
+    // Update the DOM with the scores
+    for (const [i, budget] of budgets.entries()) {
+      const numberTdEl = document.createElement('td');
+      const nameTdEl = document.createElement('td');
+      const dateTdEl = document.createElement('td');
+      const amountTdEl = document.createElement('td');
+      const notesTdEl = document.createElement('td');
+
+      numberTdEl.textContent = budget.Number;
+      nameTdEl.textContent = budget.Name;
+      dateTdEl.textContent = budget.Date;
+      amountTdEl.textContent = budget.Amount;
+      notesTdEl.textContent = budget.Notes;
+
+      const rowEl = document.createElement('tr');
+      rowEl.appendChild(numberTdEl);
+      rowEl.appendChild(nameTdEl);
+      rowEl.appendChild(dateTdEl);
+      rowEl.appendChild(amountTdEl);
+      rowEl.appendChild(notesTdEl);
+
+      tableBodyEl.appendChild(rowEl);
+    }
+  } else {
+    // tableBodyEl.innerHTML = '<tr><td colSpan=4>Error</td></tr>';
+  }
 }
 
-// function injectExpense() {
-//   const injectionContainer = document.getElementById('injectCategory');
-//   // HTML content you want to inject
-//   const htmlToInject = '<th scope="row" ondblclick="editText(this)">--Double Click to Edit--</th><td ondblclick="editText(this)"></td><td></td>';
-
-//   // Inject the HTML content into the container
-//   injectionContainer.innerHTML = htmlToInject;
-// }
-
-function injectExpense() {
-  const injectionContainer = document.getElementById('injectCategory');
-  // Create a new table row element
-  const newRow = document.createElement('tr');
-  newRow.innerHTML = `
-    <th scope="row" ondblclick="editText(this)">--Double Click to Edit--</th>
-    <td ondblclick="editText(this)"></td>
-    <td></td>
-  `;
-
-  // Append the new row to the table
-  injectionContainer.appendChild(newRow);
-}
+loadBudgets();
