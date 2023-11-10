@@ -27,7 +27,7 @@ function getNewBudgetNum() {
 }
 
 //Creates a new budget to be filled in by the form
-function createBudget(){
+async function createBudget(){
   const Name = document.querySelector("#name");
   const Date = document.querySelector("#date");
   const Amount = document.querySelector("#amount");
@@ -37,8 +37,18 @@ function createBudget(){
 
   console.log(newBudget);
   
-  //Store budget in local memory so I can edit it before saving it to the DB
-  localStorage.setItem("Budget", JSON.stringify(newBudget));
+  // //Store budget in local memory so I can edit it before saving it to the DB ---- OLD WAY
+  // localStorage.setItem("Budget", JSON.stringify(newBudget));
+
+  const response = await fetch('/api/budget', {
+    method: 'POST',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(newBudget),
+  });
+
+  // Store what the service gave us as the high scores
+  const budgets = await response.json();
+  localStorage.setItem("Budget", JSON.stringify(budgets));
 
   //Move to budgetCreate html
   window.location.href = "console.html";

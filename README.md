@@ -68,9 +68,23 @@ For this deliverable, I added the JS foundations for the future implementations 
 - Because of the design of users, budgets, and expenses dynamically loading, every change will automatically be reflected when the user loads the page. So if multiple people (a couple) share an account, they will both always see updated information in realtime.
 - **Future Database Support** - Every place where I put something into local storage will eventually go into a database (User Info, Expenses, and Budgets/Categories in the future). Everything I put into local storage is organized into a class of some kind, which will interact well and keep everything organized as it needs to be.
 
-**Future Work**
-- When these objects (budgets) are loaded, I will have them do the calculations for amounts and such. This could also implement some kind of cacheing which will check if anything has been changed since it was last calculated.
-- Dynamically update drop downs from the budgets available and their categories in quick expense
-- With DB I can access Budgets so they can be viewed and changed/added to
+## Services Deliverable
+- (Required) Simon Service deployed to your production environment (simon.snatchsolutions.click)
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page (Linked via the icon in the bottom right corner)
 
-Note: The magnitude of this project grew seemingly exponentially at this step, especially for all the bells and whistles (dynamic expense loading, drop downs being up to date with budgets, how much to load on each page, creating a new budget form, etc). Although many of these things do use JavaScript, they also required a pretty decent amount of html and css mending, which I did not anticipate. Since each deliverable is supposed to be about 100 lines of code, I hope you'll have mercy on me for this one, as I definitely wrote that amount. I have tried to implement the skeleton for everything in this deliverable, but because of the magnitude of growth here, as well as the need for a DB and react to implement many of these features effectively (dynamic page loading with budgets and expenses), I hope you'll accept it for what it is.
+**Create an HTTP service using Node.js and Express** 
+- My server file is index.js
+**Frontend served up using express static middleware**
+- Done using the public folder, specifically with a default call to index.html when someone searches the domain
+**Your frontend calls third party service endpoints**
+- The Welcome Screen on Login calls and endpoint to get a greeting in a different langauge
+**Backend Service Endpoints**
+- Accessible through '/api/'
+  -'/budgets/' lists all budgets (also shown in local storage)
+  -'/budget/' adds a budget to all budgets (easiest through the create a budget button on the console)
+  -'/expense/' adds an expense to the budget with the matching budget number (easiest through the add Expense button, make sure to add to the right number)
+
+**Frontend Calls to my Service Endpoints**
+-The console "create a budget" button takes the user to a form to make a budget. The budget is submitted to my '/api/budget/' endpoint to add it to all of my budgets.
+-The console "add expense" buttons takes the user to a form to make an expense. **Make sure to get the budget number right.** The expense is submitted to my '/api/expense' endpoint to add it to the corresponding budget. 
+
