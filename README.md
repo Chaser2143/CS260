@@ -76,13 +76,13 @@ For this deliverable, I added the JS foundations for the future implementations 
 - My server file is index.js
 **Frontend served up using express static middleware**
 - Done using the public folder, specifically with a default call to index.html when someone searches the domain
-**Your frontend calls third party service endpoints**
-- The Welcome Screen on Login calls and endpoint to get a greeting in a different langauge
+**Your frontend calls third party service endpoint**
+- The Welcome Screen on Login calls and endpoint to get a greeting in a different language
 **Backend Service Endpoints**
 - Accessible through '/api/'
   -'/budgets/' lists all budgets (also shown in local storage)
   -'/budget/' adds a budget to all budgets (easiest through the create a budget button on the console)
-  -'/expense/' adds an expense to the budget with the matching budget number (easiest through the add Expense button, make sure to add to the right number)
+  -'/expense/' adds an expense to the budget with the matching budget number (easiest through the add Expense button, make sure to add to the right number or it won't show up)
 **Frontend Calls to my Service Endpoints**
 -The console "create a budget" button takes the user to a form to make a budget. The budget is submitted to my '/api/budget/' endpoint to add it to all of my budgets.
 -The console "add expense" buttons takes the user to a form to make an expense. **Make sure to get the budget number right.** The expense is submitted to my '/api/expense' endpoint to add it to the corresponding budget. 
