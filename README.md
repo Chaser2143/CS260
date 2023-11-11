@@ -63,27 +63,26 @@ For this deliverable, I styled the CSS of my startup, mostly using bootstrap.
 For this deliverable, I added the JS foundations for the future implementations on the site.
 
 - **Login Support** - I saved the username and password from the login page into the user's local storage as a user object, and moved them on to the budget console page. In the future, I can change these to be verified in the DB before moving them onward.
-- **Interaction Logic Support** - Expense objects are created and loaded into local storage from the quick expense page. Budget objects are nade when you create a budget (Place holder still present on console.html). Login page also calls a web service which greets the user in a new language.
-- **Websocket Support** - Implemented proper class structure to facilitate updating in realtime. I also made the budget views editable with a double click, so in the future this can update the objects in real time.
-- Because of the design of users, budgets, and expenses dynamically loading, every change will automatically be reflected when the user loads the page. So if multiple people (a couple) share an account, they will both always see updated information in realtime.
-- **Future Database Support** - Every place where I put something into local storage will eventually go into a database (User Info, Expenses, and Budgets/Categories in the future). Everything I put into local storage is organized into a class of some kind, which will interact well and keep everything organized as it needs to be.
+- **Interaction Logic Support** - Expense objects are created and loaded into local storage on budgets from the quick expense page **Make sure to get the budget number right, or it won't add to that budget**. Budget objects are made when you create a budget, and are dynamically loaded on the console page.
+- **Websocket Support** - Placeholder Interval function in src/main.js which mimics different logins at the bottom of the console page.
+- **Future Database Support** - Every place where I put something into local storage will eventually go into a database (User Info, Expenses, and Budgets/Categories in the future).
 
 ## Services Deliverable
 - (Required) Simon Service deployed to your production environment (simon.snatchsolutions.click)
 - (Required) A link to your GitHub startup repository prominently displayed on your application's home page (Linked via the icon in the bottom right corner)
 
-**Create an HTTP service using Node.js and Express** 
-- My server file is index.js
-**Frontend served up using express static middleware**
-- Done using the public folder, specifically with a default call to index.html when someone searches the domain
-**Your frontend calls third party service endpoint**
-- The Welcome Screen on Login calls and endpoint to get a greeting in a different language
-**Backend Service Endpoints**
-- Accessible through '/api/'
-  -'/budgets/' lists all budgets (also shown in local storage)
-  -'/budget/' adds a budget to all budgets (easiest through the create a budget button on the console)
-  -'/expense/' adds an expense to the budget with the matching budget number (easiest through the add Expense button, make sure to add to the right number or it won't show up)
-**Frontend Calls to my Service Endpoints**
--The console "create a budget" button takes the user to a form to make a budget. The budget is submitted to my '/api/budget/' endpoint to add it to all of my budgets.
--The console "add expense" buttons takes the user to a form to make an expense. **Make sure to get the budget number right.** The expense is submitted to my '/api/expense' endpoint to add it to the corresponding budget. 
+- **Create an HTTP service using Node.js and Express** 
+  - My server file is index.js
+- **Frontend served up using express static middleware**
+  - Done using the public folder, specifically with a default call to index.html when someone searches the domain
+- **Your frontend calls third party service endpoint**
+  - The Welcome Screen on Login calls and endpoint to get a greeting in a different language
+- **Backend Service Endpoints**
+  - Accessible through '/api/'
+    -'/budgets/' lists all budgets (also shown in local storage)
+    -'/budget/' adds a budget to all budgets (easiest through the create a budget button on the console)
+    -'/expense/' adds an expense to the budget with the matching budget number (easiest through the add Expense button, make sure to add to the right number or it won't show up)
+- **Frontend Calls to my Service Endpoints**
+  -The console "create a budget" button takes the user to a form to make a budget. The budget is submitted to my '/api/budget/' endpoint to add it to all of my budgets.
+  -The console "add expense" buttons takes the user to a form to make an expense. **Make sure to get the budget number right.** The expense is submitted to my '/api/expense' endpoint to add it to the corresponding budget. 
 
