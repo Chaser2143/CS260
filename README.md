@@ -102,11 +102,12 @@ For this deliverable, I added the JS foundations for the future implementations 
 - (Required) A link to your GitHub startup repository prominently displayed on your application's home page (Linked via the icon in the bottom right corner)
 
 - **Supports new user registration**
-
+  - Yes! Just use the login page (Powered by Login.js in '/src')
 - **Supports existing user authentication**
-
+  - ^Ditto
 - **Stores and retrieves credentials in MongoDB**
-
+  - Yes! It is updating the Auth Token and everything!
 - **Restricts application functionality based upon authentication**
-  - If you are not logged in, none of the api endpoints work. You can still access all the html, but nothing will be loaded or added to the DB
+  - If you are not logged in, none of the api endpoints work. You can still access all the html, but nothing will be loaded or added to the DB. If you click back on the login page, a gross logout button shows up that will log you out. (It was either a gross button or it shows up constantly cause bootstrap... soooo here we are.)
+  - A good way to see this is to try the '/api/budgets/' endpoint logged in and logged out
 
