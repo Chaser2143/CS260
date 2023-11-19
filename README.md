@@ -104,6 +104,9 @@ For this deliverable, I added the JS foundations for the future implementations 
 - **Supports new user registration**
 
 - **Supports existing user authentication**
+
 - **Stores and retrieves credentials in MongoDB**
+
 - **Restricts application functionality based upon authentication**
+  - If you are not logged in, none of the api endpoints work. You can still access all the html, but nothing will be loaded or added to the DB
 
