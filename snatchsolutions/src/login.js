@@ -29,9 +29,9 @@
   const userName = localStorage.getItem('userName');
   if (userName) {
     setDisplay('loginControls', 'none');
-    setDisplay('logoutControls', 'block');
+    setDisplay('logoutControls', 'inline-block');
   } else {
-    setDisplay('loginControls', 'block');
+    setDisplay('loginControls', 'inline-block');
     setDisplay('logoutControls', 'none');
   }
 })();
@@ -87,8 +87,10 @@ async function getUser(email) {
 }
 
 function setDisplay(controlId, display) {
-  const playControlEl = document.querySelector(`#${controlId}`);
-  if (playControlEl) {
-    playControlEl.style.display = display;
+  console.log("Trying to set login display");
+  const controls = document.querySelector(`#${controlId}`);
+  if (controls) {
+    console.log("Setting display: " + controlId + " " + display);
+    controls.style.display = display;
   }
 }
