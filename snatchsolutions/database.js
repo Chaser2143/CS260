@@ -34,18 +34,15 @@ async function updateBudgets(newBudget){
     return budgets;
 }
 
-function addExpense(newExpense, budgets){
-  console.log(typeof newExpense.Budget);
-  console.log(newExpense.Budget);
-  for(budget of budgets){
-    console.log(budget.Number);
-    console.log(typeof budget.Number);
-    if(budget.Number === newExpense.Budget){
-      budget.Expenses.push(newExpense);
-      break;
-    }
-  }
-  return budgets;
+async function addExpense(newExpense){
+    // Find a document with a specific condition
+    const query = { Number : newExpense.Budget };
+    const update = { $push: { Expenses: newExpense } };
+
+    // Update the found document
+    const result = await budgetCollection.findOneAndUpdate(query, update, { returnOriginal: false });
+    const budgets = budgetCollection.find();
+    return budgets.toArray();
 }
 
 module.exports = { getBudgets, updateBudgets, addExpense };

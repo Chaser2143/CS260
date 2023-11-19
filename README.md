@@ -92,6 +92,7 @@ For this deliverable, I added the JS foundations for the future implementations 
 
 - **MongoDB Atlas database created**
   - Done!
-40% - Provides backend endpoints for manipulating application data
-30% - Stores application data in MongoDB
+
+- **Provides backend endpoints for manipulating application data & Stores application data in MongoDB**
+  - Done! You can see this represented in the '/api/budgets/' endpoint. Index.js now calls functions in database.js which will either get everything from the DB, add an expense to a selected budget, or add a budget to the DB. It works great!
 
