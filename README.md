@@ -96,3 +96,14 @@ For this deliverable, I added the JS foundations for the future implementations 
 - **Provides backend endpoints for manipulating application data & Stores application data in MongoDB**
   - Done! You can see this represented in the '/api/budgets/' endpoint. Index.js now calls functions in database.js which will either get everything from the DB, add an expense to a selected budget, or add a budget to the DB. It works great!
 
+
+## Login Deliverable
+- (Required) Simon Login deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page (Linked via the icon in the bottom right corner)
+
+- **Supports new user registration**
+
+- **Supports existing user authentication**
+- **Stores and retrieves credentials in MongoDB**
+- **Restricts application functionality based upon authentication**
+
