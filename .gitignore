@@ -1,4 +1,4 @@
-simon-service/
+simon-db/
 startup-example/
 deployFiles.sh
 oldCaddy.txt
@@ -8,3 +8,5 @@ snatchsolutions/npmt/node_modules
 node_modules
 package-lock.json
 package.json
+mongoCred
+snatchsolutions/dbConfig.json

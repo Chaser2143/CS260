@@ -86,3 +86,13 @@ For this deliverable, I added the JS foundations for the future implementations 
   -The console "create a budget" button takes the user to a form to make a budget. The budget is submitted to my '/api/budget/' endpoint to add it to all of my budgets.
   -The console "add expense" buttons takes the user to a form to make an expense. **Make sure to get the budget number right.** The expense is submitted to my '/api/expense' endpoint to add it to the corresponding budget. 
 
+## Services Deliverable
+- (Required) Simon DB deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page (Linked via the icon in the bottom right corner)
+
+Application database support
+20% - MongoDB Atlas database created
+40% - Provides backend endpoints for manipulating application data
+30% - Stores application data in MongoDB
+10% - Multiple Git commits with meaningful comments.
+
