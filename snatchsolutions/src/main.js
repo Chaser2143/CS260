@@ -44,21 +44,63 @@ function editText(element) {
     input.focus();
   }
 
-//place holder for websocket
-setInterval(() => {
+// //place holder for websocket
+// setInterval(() => {
+//     const loginText = document.querySelector('#loginWebsocket');
+//     if (Math.random() > 0.5){
+//         if(Math.random() > 0.7){
+//             loginText.innerHTML = "Carl Wheezer Logged In";
+//         }
+//         else if(Math.random() > 0.8){
+//             loginText.innerHTML = "Sheen Estevez Logged In";
+//         }
+//         else{
+//             loginText.innerHTML = "Jimmy Neutron Logged In";
+//         }
+//     }
+//     else{
+//         loginText.innerHTML = "";
+//     }
+//     }, 2000);
+
+//---------------NEW Websocket Section -----------------------
+// Adjust the webSocket protocol to what is being used for HTTP
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+// Display that we have opened the webSocket
+socket.onopen = (event) => {
+    setMsg('system', 'websocket', 'connected');
+};
+
+// Display messages we receive from our friends
+socket.onmessage = async (event) => {
+    const text = await event.data.text();
+    const username = JSON.parse(text);
+    setMsg('system', 'websocket', username.text);
+};
+
+// If the webSocket is closed then disable the interface
+socket.onclose = (event) => {
+    setMsg('system', 'websocket', 'disconnected');
+};
+
+// Send a message over the webSocket
+function sendMessage(msg) {
+    socket.send(`{"text":"${msg}"}`);
+  }
+
+// Set the message on the html page
+function setMsg(cls, from, msg) {
     const loginText = document.querySelector('#loginWebsocket');
-    if (Math.random() > 0.5){
-        if(Math.random() > 0.7){
-            loginText.innerHTML = "Carl Wheezer Logged In";
-        }
-        else if(Math.random() > 0.8){
-            loginText.innerHTML = "Sheen Estevez Logged In";
-        }
-        else{
-            loginText.innerHTML = "Jimmy Neutron Logged In";
-        }
-    }
-    else{
-        loginText.innerHTML = "";
-    }
-    }, 2000);
+    switch(msg.toString()) {
+        case "connected":
+          loginText.innerHTML = "Websocket Connected";
+          break;
+        case "disconnected":
+          loginText.innerHTML = "Websocket Disconnected";
+          break;
+        default:
+            loginText.innerHTML = msg + " Logged In";
+      }
+  }
