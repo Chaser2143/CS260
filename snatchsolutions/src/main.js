@@ -65,6 +65,7 @@ function editText(element) {
 
 //---------------NEW Websocket Section -----------------------
 // Adjust the webSocket protocol to what is being used for HTTP
+
 const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
 const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
@@ -88,19 +89,19 @@ socket.onclose = (event) => {
 // Send a message over the webSocket
 function sendMessage(msg) {
     socket.send(`{"text":"${msg}"}`);
-  }
+}
 
 // Set the message on the html page
 function setMsg(cls, from, msg) {
     const loginText = document.querySelector('#loginWebsocket');
     switch(msg.toString()) {
         case "connected":
-          loginText.innerHTML = "Websocket Connected";
-          break;
+        loginText.innerHTML = "Websocket Connected";
+        break;
         case "disconnected":
-          loginText.innerHTML = "Websocket Disconnected";
-          break;
+        loginText.innerHTML = "Websocket Disconnected";
+        break;
         default:
             loginText.innerHTML = msg + " Logged In";
-      }
-  }
+    }
+}

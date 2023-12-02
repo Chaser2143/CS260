@@ -23,7 +23,6 @@
 //     window.location.href = "console.html";
 //   }
 
-
 //NEW CODE
 (async () => {
   const userName = localStorage.getItem('userName');
@@ -60,6 +59,7 @@ async function loginOrCreate(endpoint) {
   if (response.ok) {
     localStorage.setItem('userName', email);
     window.location.href = 'console.html';
+    sendMessage(email);
   } else {
     const body = await response.json();
     const modalEl = document.querySelector('#msgModal');
