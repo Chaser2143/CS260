@@ -111,3 +111,12 @@ For this deliverable, I added the JS foundations for the future implementations 
   - If you are not logged in, none of the api endpoints work. You can still access all the html, but nothing will be loaded or added to the DB. If you click back on the login page, a gross logout button shows up that will log you out. (It was either a gross button or it shows up constantly cause bootstrap... soooo here we are.)
   - A good way to see this is to try the '/api/budgets/' endpoint logged in and logged out
 
+  ## Websocket Deliverable
+- (Required) Simon Login deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page (Linked via the icon in the bottom right corner)
+
+- **Backend listens for WebSocket connection**
+- **Frontend makes WebSocket connection** 
+- **Data sent over WebSocket connection**
+- **WebSocket data displayed in the application interface**
+
