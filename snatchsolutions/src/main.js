@@ -44,25 +44,6 @@ function editText(element) {
     input.focus();
   }
 
-// //place holder for websocket
-// setInterval(() => {
-//     const loginText = document.querySelector('#loginWebsocket');
-//     if (Math.random() > 0.5){
-//         if(Math.random() > 0.7){
-//             loginText.innerHTML = "Carl Wheezer Logged In";
-//         }
-//         else if(Math.random() > 0.8){
-//             loginText.innerHTML = "Sheen Estevez Logged In";
-//         }
-//         else{
-//             loginText.innerHTML = "Jimmy Neutron Logged In";
-//         }
-//     }
-//     else{
-//         loginText.innerHTML = "";
-//     }
-//     }, 2000);
-
 //---------------NEW Websocket Section -----------------------
 // Adjust the webSocket protocol to what is being used for HTTP
 

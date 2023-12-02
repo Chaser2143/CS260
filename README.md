@@ -116,7 +116,11 @@ For this deliverable, I added the JS foundations for the future implementations 
 - (Required) A link to your GitHub startup repository prominently displayed on your application's home page (Linked via the icon in the bottom right corner)
 
 - **Backend listens for WebSocket connection**
+  - Established at the bottom of `main.js`, which is included on the login and console pages. Middleware for websocket is found in `peerProxy.js`.
 - **Frontend makes WebSocket connection** 
+  - Each time login and console pages are loaded, main.js is called which create the actual connection. Middleware for websocket is found in `peerProxy.js`.
 - **Data sent over WebSocket connection**
+  - This occurs in the `loginOrCreate()` function of `login.js`. Each time a successful login or account creation occurs, everyone else will be told that person logged in. (Their email is sent as a JSON message). The send function can be found in `main.js`.
 - **WebSocket data displayed in the application interface**
+  - Everytime someone else logs in, their email will be displayed at the bottom of the login and console pages. The functionality can be found in `setMSG()` in `main.js`. (To test this, I opened a browser on my computer, and then logged in on my phone, and vice versa).
 
