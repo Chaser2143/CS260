@@ -7,7 +7,5 @@ TODO.txt
 snatchsolutions/npmt/node_modules
 .vscode
 node_modules
-package-lock.json
-package.json
 mongoCred
 snatchsolutions/dbConfig.json
