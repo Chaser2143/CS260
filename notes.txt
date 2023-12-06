@@ -1,4 +1,4 @@
-in app.jsx, if I don't put public before the svg (like it suggests), my stuff breaks?
+
 
 Not sure how to make the content fill the page like it did before?
 

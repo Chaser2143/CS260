@@ -10,28 +10,28 @@ import { Expense } from './expense/expense';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function App() {
     return (
     <BrowserRouter>
-        <div className='expand content'>
+        <div className='content'>
             <header>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-                    <NavLink className="navbar-brand" to='home'>Snatch Bank</NavLink>
-                    <Button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </Button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
-                        <li className="nav-item active">
+            <Navbar expand="lg" className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+                <Container>
+                    <NavLink className="navbar-brand" to="home">Snatch Bank</NavLink>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
                         <NavLink className="nav-link" to="login">Login</NavLink>
-                        </li>
-                        <li className="nav-item">
                         <NavLink className="nav-link" to="console">Budget Console</NavLink>
-                        </li>
-                    </ul>
-                    </div>
-                </nav>
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+                </Navbar>
             </header>
     
             <Routes>
@@ -48,7 +48,7 @@ export default function App() {
                 <span className="footer-content">Author: Chase Bledsoe</span>
                 <span className="footer-content" id="loginWebsocket"></span>
                 <a className ="footer-content" href="https://github.com/Chaser2143/SnatchSolutions">
-                    <img src="public/github-mark-white.svg" alt="Github Social Logo" height="24px" width="24px" />
+                    <img src="/github-mark-white.svg" alt="Github Social Logo" height="24px" width="24px" />
                 </a>
             </footer>
         </div>
