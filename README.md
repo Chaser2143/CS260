@@ -124,3 +124,14 @@ For this deliverable, I added the JS foundations for the future implementations 
 - **WebSocket data displayed in the application interface**
   - Everytime someone else logs in, their email will be displayed at the bottom of the login and console pages. The functionality can be found in `setMSG()` in `main.js`. (To test this, I opened a browser on my computer, and then logged in on my phone, and vice versa).
 
+## React Deliverable
+- (Required) Simon React deployed to your production environment
+- (Required) A link to your GitHub startup repository prominently displayed on your application's home page
+# Application converted to use React
+ - **Bundled using WebPack and Babel as generated from using create-react-app**
+
+- **Multiple functional react components**
+
+- **React router**
+
+- **React hooks**
