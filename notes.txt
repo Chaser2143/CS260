@@ -1,1 +1,3 @@
 in app.jsx, if I don't put public before the svg (like it suggests), my stuff breaks?
+
+in app.jsx, my button is broken, not totally sure how to fix it
