@@ -3,6 +3,8 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
 import { Home } from './home/home';
 import { Console } from './console/console';
+import { Budget } from './budget/budget';
+import { Expense } from './expense/expense';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +14,7 @@ import Button from 'react-bootstrap/Button';
 export default function App() {
     return (
     <BrowserRouter>
-        <div>
+        <div className='expand content'>
             <header>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
                     <NavLink className="navbar-brand" to='home'>Snatch Bank</NavLink>
@@ -37,6 +39,8 @@ export default function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/home' element={<Home />} />
                 <Route path='/console' element={<Console />} />
+                <Route path='console/budget' element={<Budget />} />
+                <Route path='console/expense' element={<Expense />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
     
