@@ -6,6 +6,7 @@ import { Console } from './console/console';
 import { Budget } from './budget/budget';
 import { Expense } from './expense/expense';
 import { AuthState } from './login/authState';
+import { Logins } from './logins';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -66,7 +67,7 @@ export default function App() {
     
             <footer className="d-flex bg-dark p-3 justify-content-between">
                 <span className="footer-content">Author: Chase Bledsoe</span>
-                <span className="footer-content" id="loginWebsocket"></span>
+                <Logins></Logins>
                 <a className ="footer-content" href="https://github.com/Chaser2143/SnatchSolutions">
                     <img src="/github-mark-white.svg" alt="Github Social Logo" height="24px" width="24px" />
                 </a>

@@ -8,6 +8,10 @@ html, .body {
     flex-direction: column;
 }
 
+.event {
+  color: white;
+}
+
 .expand {
   display: flex;
   flex-direction: column;
