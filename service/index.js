@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 //Public and Src folders hold my middleware
 app.use(express.static('public'));
-app.use(express.static('src'));
+// app.use(express.static('src'));
 
 // Trust headers that are forwarded from the proxy so we can determine IP addresses
 app.set('trust proxy', true);

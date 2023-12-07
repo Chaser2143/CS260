@@ -59,7 +59,7 @@ export function Budget(){
                             className="form-control" 
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
-                            placeholder="Password"/>
+                            placeholder="NA"/>
                         </div>
                     </div>
                     <div className="form-group row justify-content-center">
