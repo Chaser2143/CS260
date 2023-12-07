@@ -7,6 +7,10 @@ export default class BudgetClass {
         this.Notes = Notes;
         this.Expenses = [];
       }
+      
+      addExpense(Expense){
+        this.Expenses.push(Expense);
+      }
   }
 
   

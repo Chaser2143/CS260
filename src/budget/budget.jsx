@@ -15,6 +15,7 @@ export function Budget(){
     //Creates a new budget to be filled in by the form
     async function createBudget(){
         const newBudget = new BudgetClass(budgetCounter, name, date, amount, notes);
+        setBudgetCounter(budgetCounter+1); //Increment Budget Counter
     
         console.log(newBudget);
         
