@@ -1,7 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 export function Console() {
+  const [budgets, setBudgets] = React.useState([]);
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    fetch('/api/budgets')
+      .then((response) => response.json())
+      .then((b) => {
+        setBudgets(b);
+        localStorage.setItem('Budget', JSON.stringify(b));
+      })
+      .catch(() => {
+        // If there was an error then just use the last saved budgets
+        const budgetsText = localStorage.getItem('Budget');
+        if (budgetsText) {
+          setBudgets(JSON.parse(budgetsText));
+        }
+      });
+  }, []);
+
+  const budgetRows = [];
+  if (budgets.length) {
+    for (const [i, budget] of budgets.entries()) {
+      budgetRows.push(
+        <tr key={i}>
+          <td>{budget.Number}</td>
+          <td>{budget.Name}</td>
+          <td>{budget.Date}</td>
+          <td>{budget.Amount}</td>
+          <td>{budget.Notes}</td>
+        </tr>
+      );
+    }
+  }
+
   return (
     <main className="content mar-content">
       {/* <!-- This div is for the "Create a budget" form --> */}
@@ -18,17 +54,12 @@ export function Console() {
               <th scope="col">Notes</th>
             </tr>
           </thead>
-          <tbody id="budgets"></tbody>
+          <tbody id="budgets">{budgetRows}</tbody>
         </table>
         </div>
         <div> 
-          {/* Both of these buttons need wired up */}
-          <Link to="budget"> 
-            <button className="btn btn-light" type="submit">Create Budget</button>
-          </Link>
-          <Link to="expense">
-            <button className="btn btn-light" type="submit">Add Expense</button>
-          </Link>
+          <Button className="btn btn-light" onClick={() => navigate("/console/budget")}>Create Budget</Button>
+          <Button className="btn btn-light" onClick={() => navigate("/console/expense")}>Add Expense</Button>
         </div>
       </div>
     </main>
