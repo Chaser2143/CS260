@@ -1,13 +1,43 @@
 import React from 'react';
 
-export function Login() {
+import { Unauthenticated } from './unauthenticated';
+import { Authenticated } from './authenticated';
+import { AuthState } from './authState';
+
+export function Login({ userName, authState, onAuthChange}) {
+  const [greeting, setGreeting] = React.useState('Welcome');
+  const [greetingLang, setGreetingLang] = React.useState('');
+
+   // We only want this to render the first time the component is created and so we provide an empty dependency list.
+   React.useEffect(() => { //Welcome API Stuff
+    const greetingsApiUrl = "https://www.greetingsapi.com/random";
+    fetch(greetingsApiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        setGreeting(data.greeting);
+        setGreetingLang("Hello in " + data.language);
+      })
+      .catch();
+  }, []);
+
   return (
     <main className="content align-form">
-      <div>
         <div className="blockquote text-center">
-          <h1 className="display-2 m-1" id="welcome_greeting">Welcome</h1>
-          <small className="text-muted" id="welcome_language"> </small>
+          <h1 className="display-2 m-1" id="welcome_greeting">{greeting}</h1>
+          <small className="text-muted" id="welcome_language">{greetingLang}</small>
         </div>
+        <div>
+        {authState === AuthState.Authenticated && (
+          <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
+        )}
+        {authState === AuthState.Unauthenticated && (
+          <Unauthenticated
+            userName={userName}
+            onLogin={(loginUserName) => {
+              onAuthChange(loginUserName, AuthState.Authenticated);
+            }}
+          />
+        )}
         {/* <div id="loginControls" style="display: none">
           <form className="mar-form p-2">
             <div className="form-group">

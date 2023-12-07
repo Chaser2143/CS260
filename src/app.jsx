@@ -5,6 +5,7 @@ import { Home } from './home/home';
 import { Console } from './console/console';
 import { Budget } from './budget/budget';
 import { Expense } from './expense/expense';
+import { AuthState } from './login/authState';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,27 +17,46 @@ import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function App() {
+    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
+
     return (
     <BrowserRouter>
         <div className='content'>
             <header>
             <Navbar expand="lg" className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-                <Container>
+                {/* <Container> */}
                     <NavLink className="navbar-brand" to="home">Snatch Bank</NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavLink className="nav-link" to="login">Login</NavLink>
+                        {authState === AuthState.Authenticated && (
                         <NavLink className="nav-link" to="console">Budget Console</NavLink>
+                        )}
                     </Nav>
                     </Navbar.Collapse>
-                </Container>
+                {/* </Container> */}
                 </Navbar>
             </header>
     
             <Routes>
                 <Route path='/' element={<Home />} exact />
-                <Route path='/login' element={<Login />} />
+                <Route 
+                    path='/login' 
+                    element={
+                        <Login 
+                            userName={userName}
+                            authState={authState}
+                            onAuthChange={(userName, authState) => {
+                                setAuthState(authState);
+                                setUserName(userName);
+                            }}
+                        />
+                        } 
+                        exact
+                    />
                 <Route path='/home' element={<Home />} />
                 <Route path='/console' element={<Console />} />
                 <Route path='console/budget' element={<Budget />} />
