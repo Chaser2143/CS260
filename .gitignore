@@ -9,3 +9,4 @@ snatchsolutions/npmt/node_modules
 node_modules
 mongoCred
 snatchsolutions/dbConfig.json
+dist

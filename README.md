@@ -129,9 +129,10 @@ For this deliverable, I added the JS foundations for the future implementations 
 - (Required) A link to your GitHub startup repository prominently displayed on your application's home page
 # Application converted to use React
  - **Bundled using WebPack and Babel as generated from using create-react-app**
-
+  - Done, accomplished in the DeployReact.sh script when deployed.
 - **Multiple functional react components**
-
+  - Done. I'd specify a file, but you can look at any of the file structure within my src folder and see.
 - **React router**
-
+  - Router is used within app.jsx in my src folder.
 - **React hooks**
+  - Hooks are used in login/login.jsx to get a greeting from an API call, as well as console/console.jsx to load the budgets from my API.
