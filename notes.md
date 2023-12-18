@@ -18,7 +18,7 @@ In the following code, what does the link element do?
 In the following code,  what does a div tag do?
 - Divider
 In the following code, what is the difference between the #title and .grid selector?
-- # means select by id, . means select by class
+- (#) means select by id, . means select by class
 In the following code, what is the difference between padding and margin?
 - Padding affects the space inside an element, separating its content from its border.
 - Margin controls the space outside an element, creating separation between that element and neighboring elements or the edge of its container.
@@ -132,3 +132,95 @@ Port 443, 80, 22 is reserved for which protocol?
 22 : ssh
 What will the following code using Promises output when executed?
 - As for the async keyword in JavaScript, it is used to define asynchronous functions. Async functions allow you to write code that appears synchronous but is asynchronous behind the scenes. An async function always returns a Promise, which makes it easy to work with asynchronous operations using the await keyword.
+Reduce Keyword (JS)
+- Sums the numbers in the array given an accumulator value and a callback function
+The DOM
+- Javascript can modify the DOM
+- DOM is a tree-structured representation of the HTML document used by the browser
+Display an image with a hyperlink
+- Use href in the <a> tag, not link
+
+## Final Study Guide ##
+What do HTTP status codes in the 300, 400, 500 range indicate?
+300: Resource has moved/Redirect
+400: Client Error
+500: Server Error
+
+What does the HTTP header content-type allows you to do?
+The Content-Type HTTP header indicates the media type of the resource being sent in the HTTP message's body, allowing the recipient (usually a browser or client) to interpret and handle the content correctly.
+Options are text/html, application/json, img/jpeg or img/png
+
+What do the following attributes of a cookie do?
+Domain - The Domain attribute of a cookie specifies which domain the cookie is valid for. It restricts the cookie's availability to a specific domain and its subdomains. 
+Path - The Path attribute determines the URL path for which the cookie is valid. It restricts the cookie's availability to a specific path on the domain. For instance, a cookie set with the path /products will be sent to the server only for requests that match that path, like example.com/products/item1. It won't be sent for requests to other paths on the same domain.
+SameSite - The SameSite attribute helps mitigate cross-site request forgery (CSRF) attacks by controlling whether a cookie should be sent with cross-site requests.
+  Values : SameSite=None: Allows the cookie to be sent in cross-origin requests. However, for this attribute to work, the cookie must also be marked as secure (using the Secure attribute) and must be accessed via HTTPS.
+  SameSite=Strict: The cookie is not sent with cross-site requests, providing a high level of protection against CSRF attacks.
+  SameSite=Lax: Allows some exceptions for top-level navigations (like clicking a link) from external sites, but restricts the cookie in cross-origin POST requests (like submitting forms). This provides a balanced approach between security and usability.
+HTTPOnly - The HttpOnly attribute is a security measure that, when set, restricts the cookie from being accessed by client-side scripts (such as JavaScript). It ensures that the cookie is only sent to the server with HTTP requests and cannot be accessed or manipulated by scripts running on the page. This helps prevent certain types of attacks, like cross-site scripting (XSS), where an attacker could attempt to steal sensitive information from cookies via malicious scripts injected into a website.
+
+Ex MongDB Query : { cost: { $gt: 10 }, name: /fran.*/}
+cost Field Greater Than ($gt) 10: This part of the query filters documents where the cost field's value is greater than ($gt) 10. It will retrieve documents where the cost field contains a numerical value greater than 10.
+name Field Matches (/fran.*/): This part utilizes a regular expression (/fran.*/) to match documents where the name field contains a string that starts with "fran" followed by any number (including zero) of characters. The . in the regular expression matches any single character, and * quantifier indicates zero or more occurrences.
+
+What is JSX and how are the curly braces rendered?
+JSX (JavaScript XML) is a syntax extension used in React, a JavaScript library for building user interfaces. It allows developers to write HTML-like code directly within JavaScript, making it easier to create and manage UI components.
+
+In JSX, curly braces {} are used for embedding JavaScript expressions or variables within the JSX code. This enables dynamic content rendering and the execution of JavaScript logic within the UI.
+
+Ex : (Name is a JS variable and 2 + 2 goes in JS to become 4)
+import React from 'react';
+
+const MyComponent = () => {
+  const name = 'World';
+  return (
+    <div>
+      <h1>Hello, {name}!</h1>
+      <p>The result of 2 + 2 is: {2 + 2}</p>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+What are React Hooks used for? 
+React Hooks are functions that allow functional components in React to use state, lifecycle methods, and other React features without writing a class
+Commonly Used React Hooks:
+useState: Allows functional components to manage local state. It returns a stateful value and a function to update that value, enabling the component to hold and update its state.
+
+useEffect: Enables performing side effects in functional components. It runs after every render and can perform data fetching, subscriptions, or manual DOM manipulations.
+
+useContext: Provides a way to consume a React context in functional components. It allows accessing the value provided by a Context.Provider higher up in the component tree.
+
+useReducer: An alternative to useState, useReducer manages more complex state logic by dispatching actions to a reducer function.
+
+useCallback and useMemo: These hooks optimize performance by memoizing functions or values, preventing unnecessary re-renders in certain cases.
+
+useRef: Creates a mutable reference object that persists across renders, commonly used for accessing and working with DOM elements imperatively.
+
+What is the useEffect hook used for?
+useEffect allows you to perform side effects in functional components. It runs after every render, including the initial render, and after every update.
+The useEffect hook takes two arguments:
+
+Effect: A function that represents the side effect to be executed.
+Dependency Array (Optional): An array of dependencies that determines when the effect will run. If the dependencies change between renders, the effect will re-run. If no dependencies are provided, the effect runs after every render.
+
+What role does npm play in web development?
+npm is a package manager which will install all dependencies listed in package.json
+
+What does package.json do in a npm project?
+Holds dependencies, project information and initiliazation stuff (custom startup script)
+
+What does the fetch function do?
+Used to make HTTP requests of basically any kind to a server in javascript
+fetch() returns a Promise that resolves to the Response object representing the response to the request.
+You can then get the status code with repsonse.ok and parse the json response with response.json()
+
+What does node.js do?
+Node.js is a server-side JavaScript runtime environment that allows developers to run JavaScript on the server. It provides an environment for executing JavaScript code outside of a web browser, enabling developers to build scalable and high-performance network applications.
+Used for webdev, api's, etc (my whole startup is based on node)
+
+What does Vite do?
+Vite is a build tool for modern web development, primarily used with frameworks like Vue.js and React. It focuses on providing a fast and efficient development experience by leveraging native ES module support in modern browsers.
+Fast Development Server: Vite offers a development server with hot module replacement (HMR), allowing for quick and efficient development by instantly updating the browser when changes are made to the codebase.
+Basically, I think Vite compiled my local development server
